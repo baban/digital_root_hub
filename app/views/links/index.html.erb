@@ -1,2 +1,24 @@
-<h1>Sites#index</h1>
-<p>Find me in app/views/sites/index.html.erb</p>
+<section>
+  <h2>リンク集</h2>
+  <ul>
+    <% @list.each do |author| %>
+      <li>
+        <dl>
+          <dt>
+            <%= author.name %>
+            <%= author.name_kana && "(#{author.name_kana})" %>
+          </dt>
+          <dd>
+            <ul>
+              <% author.sites.each do |site| %>
+                <%=link_to site.title, site.href %>
+              <% end %>
+            </ul>
+          </dd>
+        </dl>
+      </li>
+    <% end %>
+  </ul>
+  <div class="paginate"><%=paginate @list %></div>
+</section>
+

@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
   def index
-    @list = Author.page( params[:page] ).per( 50 )
+    @list = Author.page( params[:page] )
   end
 end

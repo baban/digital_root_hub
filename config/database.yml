@@ -1,32 +1,26 @@
 development:
   adapter: mysql2
-  database: cook24_dev 
+  database: dirital_root_hub_dev
   username: root
   password: root
   host: localhost
 
 test:
   adapter: mysql2
-  database: cook24_test
+  database: dirital_root_hub_test
   username: root
   password: root
   host: localhost
 
 staging:
   adapter: mysql2
-  database: cook24_staging
+  database: dirital_root_hub_staging
   username: root
   host: localhost
 
 production:
   adapter: mysql2
-  database: cook24_main
-  username: cook24
-  host: localhost
-
-cook24_users:
-  adapter: mysql2
-  database: cook24_main
+  database: dirital_root_hub
   username: cook24
   host: localhost
 
