@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Author:
+  fields:
+    default: name, name_kana
+    form: name, name_kana
+  relationships: sites
+  application: Application
