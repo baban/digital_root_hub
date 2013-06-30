@@ -1,10 +1,7 @@
 # encoding: utf-8
 
 class User < ActiveRecord::Base
-  establish_connection "cook24_users" if [:staging,:production].include?(Rails.env.to_sym)
   default_scope order: 'id DESC'
-
-  acts_as_paranoid
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,38 +11,13 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :omniuser_id
 
-  has_one :user_profile
-  alias :profile :user_profile
-
-  accepts_nested_attributes_for :user_profile
-  attr_accessible :user_profile, :user_profile_attributes
-
-  has_many :recipes
-  has_many :recipe_comments
-  has_many :diaries
-  has_many :followers
-
   def initialize(*args)
     super(*args)
-    self.user_profile = create_profile(args.last)
-  end
-
-  def create_profile(h)
-    h = {} unless h.is_a?(Hash)
-    profile = UserProfile.new(h[:user_profile_attributes])
-    profile.email=h[:email]
-    
-    profile
   end
 
   def stop
     self.retire_flg = true
     self.save
-    self.recipes.update_all( " public = false " )
-    self.diaries.delete_all
-    self.recipe_comments.delete_all
-    self.followers.delete_all
-    Follower.where( follower_id: self.id ).delete_all
     self
   end
 

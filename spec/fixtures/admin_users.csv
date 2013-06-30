@@ -1,0 +1,2 @@
+id,first_name,last_name,role,email,status,token,salt,crypted_password,preferences,created_at,updated_at
+1,"","",admin,babanba.n@gmail.com,true,cb9d03441eef-b391b7849725,d72ca104e6002bb75889aae93590caf160a9c6c7,f9838ca3794d2dc73b2f95f72e81b428689583ea,,2013-06-30 10:03:50 UTC,2013-06-30 10:03:50 UTC
