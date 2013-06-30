@@ -1,4 +1,10 @@
 LinkStation::Application.routes.draw do
+  match "/auth/:provider/callback" => "sessions#callback"
+  match "/logout" => "sessions#destroy", :as => :logout
+
+  root to:"top#index"
+  devise_for :user
+
   resources(:links,only:[:index])
 
   # The priority is based upon order of creation:
