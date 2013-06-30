@@ -1,5 +1,6 @@
 <section>
   <h2>リンク集</h2>
+  <div class="paginate"><%=paginate @list %></div>
   <ul>
     <% @list.each do |author| %>
       <li>
@@ -19,6 +20,5 @@
       </li>
     <% end %>
   </ul>
-  <div class="paginate"><%=paginate @list %></div>
 </section>
 

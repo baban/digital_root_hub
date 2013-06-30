@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+AdminUser:
+  fields:
+    default: first_name, last_name, role, email, status, token, salt, crypted_password, preferences
+    form: first_name, last_name, role, email, status, token, salt, crypted_password, preferences
+  relationships: 
+  application: Application
