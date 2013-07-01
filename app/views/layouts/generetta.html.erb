@@ -10,7 +10,11 @@
 </head>
 <body>
 
-
+<ul>
+  <% GenerettaModel.all.each do |model| %>
+    <li><%=link_to model.title, controller:"generetta", action:"models", id: model.title %></li>
+  <% end %>
+</ul>
 
 </body>
 </html>
