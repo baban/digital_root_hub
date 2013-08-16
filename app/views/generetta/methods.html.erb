@@ -2,8 +2,19 @@
 
 <section>
   <% @model.methods.each do |method| %>
-    <%= method.description %>
-    <% methods.contexts %>
+    <dl>
+      <dt><%= method.description %></dt>
+      <dd>
+	<ul>
+          <% method.contexts.each do |context| %>
+            <li>
+	      <%= context.description %>
+	      
+	    </li>
+          <% end %>
+	</ul>
+      </dd>
+    <dl>
   <% end %>
 </section>
 
