@@ -6,8 +6,7 @@ LinkStation::Application.routes.draw do
   devise_for :user
 
   resources(:links,only:[:index])
-  resources(:generetta) { collection { get :sidebar } }
-
+  resources(:generetta) { collection { get :sidebar, :models, :methods } }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

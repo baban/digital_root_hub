@@ -6,15 +6,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta http-equiv="Content-Script-Type" content="text/javascript;charset=UTF-8" />
-  <title></title>
+  <title>Generetta</title>
 </head>
 <body>
-
-<ul>
-  <% GenerettaModel.all.each do |model| %>
-    <li><%=link_to model.title, controller:"generetta", action:"models", id: model.title %></li>
-  <% end %>
-</ul>
-
+<%= yield %>
 </body>
 </html>

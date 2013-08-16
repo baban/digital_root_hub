@@ -1,16 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head profile="http://gmpg.org/xfn/11">
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript;charset=UTF-8" />
-  <title></title>
-</head>
-<body>
-
-
-
-</body>
-</html>
+<ul id="model-test-list">
+  <% GenerettaModel.all.each do |model| %>
+    <li><%=link_to model.title, controller:"generetta", action:"models", id: model.title %></li>
+  <% end %>
+</ul>

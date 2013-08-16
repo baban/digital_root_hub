@@ -1,3 +1,5 @@
-<% GenerettaModel.where( title:"User" ).first.each do |model| %>
-  <%= model %>
-<% end %>
+<ul>
+  <% @model.each do |model| %>
+    <li><%= model %></li>
+  <% end %>
+</ul>
