@@ -4,10 +4,13 @@
 
 table.cases {
   border:solid 3px #000;
-  td {
+  td, th {
     border:solid 1px #000;
     min-width:30px;
     height:30px;
     padding:3px;
+  }
+  th {
+    background-color:#eee;
   }
 }

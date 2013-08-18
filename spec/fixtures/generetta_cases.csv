@@ -1,1 +1,3 @@
-id,title,content,created_at,updated_at
+id,generetta_context_id,row,col,description,content,created_at,updated_at
+1,1,1,1,hoge,@value.should be_true,2013-08-18 07:47:47 UTC,2013-08-18 07:47:47 UTC
+2,1,3,3,hoge,@value.should be_true,2013-08-18 07:47:56 UTC,2013-08-18 07:47:56 UTC

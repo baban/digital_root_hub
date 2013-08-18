@@ -1,10 +1,20 @@
 <h2><%= @context.description %></h2>
 
+<% @context.context_filters.each do |filter| %>
+  <div class="filter">
+    <%= filter.content %>
+  </div>
+<% end %>
+
 <table class="cases">
-  <% @case_table.each do |row| %>
+  <% @case_table.each.with_index do |row,i| %>
     <tr>
-      <% row.each do |col| %>
-        <td><%= col ? col : "" %></td>
+      <% row.each.with_index do |col,j| %>
+        <% if i==0 or j==0 %>
+          <th><%= col ? col : "" %></th>
+        <% else %>
+          <td><%= col ? col : "" %></td>
+        <% end %>
       <% end %>
     </tr>
   <% end %>
