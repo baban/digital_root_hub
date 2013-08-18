@@ -1,3 +1,13 @@
 // Place all the styles related to the generetta controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.cases {
+  border:solid 3px #000;
+  td {
+    border:solid 1px #000;
+    min-width:30px;
+    height:30px;
+    padding:3px;
+  }
+}

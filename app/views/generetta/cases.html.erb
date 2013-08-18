@@ -1,0 +1,13 @@
+<h2><%= @context.description %></h2>
+
+<table class="cases">
+  <% @case_table.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td><%= col ? col : "" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+
