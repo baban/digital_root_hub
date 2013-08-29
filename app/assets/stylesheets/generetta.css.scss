@@ -1,14 +1,74 @@
-// Place all the styles related to the generetta controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin clearfix {
+  content:"";
+  width:100%;
+  display:block;
+  clear:both;
+}
+
+@mixin clearfix-before {
+  &:after {
+    @include clearfix;
+  }
+}
+
+@mixin clearfix-after {
+  &:after {
+    @include clearfix;
+  }
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+header {
+  background-color:#ddd;
+  margin:0;
+  padding:0;
+  h1 {
+    margin:0 0 0 0.5em;
+  }
+  nav {
+    ul {
+      li {
+        display:item-list;
+        float:left;
+      }
+    }
+  }
+  @include clearfix-after;
+}
+
+#content {
+  margin:2em;
+}
+
+.filters {
+  @include clearfix-after;
+}
+
+.filter {
+  textarea {
+    height:4.5em;
+  }
+}
 
 table.cases {
+  max-width:100%;
   border:solid 3px #000;
   td, th {
     border:solid 1px #000;
     min-width:30px;
     height:30px;
     padding:3px;
+    textarea {
+      width:100%;
+      min-width:6em;
+      height:2.5em;
+      border-style:none;
+      background-color:transparent;
+    }
   }
   th {
     background-color:#eee;

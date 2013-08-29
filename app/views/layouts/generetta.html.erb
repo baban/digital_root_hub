@@ -11,13 +11,23 @@
 </head>
 <body>
 
-<nav id="sidebar">
-  <h2>Navigation</h2>
-</nav>
+<header>
+  <h1>Generetta</h1>
+  <nav>
+    <ul>
+      <li><%=link_to "TOP", "/generetta/" %></li>
+      <li><%=link_to "TOP", "/generetta/" %></li>
+    </ul>
+  </nav>
+</header>
 
 <div id="content">
   <%= yield %>
 </div>
+
+<footer>
+  <p></p>
+</footer>
 
 </body>
 </html>

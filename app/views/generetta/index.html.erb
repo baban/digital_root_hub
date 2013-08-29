@@ -1,5 +1,16 @@
 <ul id="model-test-list">
   <% GenerettaModel.all.each do |model| %>
-    <li><%=link_to model.title, controller:"generetta", action:"models", id: model.title %></li>
+    <li>
+      <dl>
+        <dt><%=link_to model.title, controller:"generetta", action:"methods", id: model.title %></dt>
+        <dd>
+          <ul>
+            <% model.methods.each do |method| %>
+              <li><%=link_to method.description, action:"cases", id: method.id %></li>
+            <% end %>
+          </ul>
+        </dd>
+      </dl>
+    </li>
   <% end %>
 </ul>

@@ -19,4 +19,30 @@ class GenerettaContext < ActiveRecord::Base
     self.col_labels.each.with_index { |cas,i| matrix[i+1][0]=cas.label }
     matrix
   end
+
+  def case_tree
+    # tree = {
+    #  labels
+    #        { label:"hoge", cells: [data1,data2...] } ,
+    #        { label:"hoge", cells: [data1,data2...] } ,
+    # }
+    matrix = self.case_table
+    tree = Array.new(cases.pluck(:row).max+1){ Array.new(cases.pluck(:col).max+1,nil) }
+    tree
+  end
+
+  def to_test(mode = :rspec)
+    filters = self.context_filters.map do |filter|
+      filter.content
+    end*"\n"
+    its = self.cases.map do |cas|
+      cas.to_test(:rspec)
+    end*"\n"
+tmpl=<<-TMPL
+context "#{self.description}" do
+  #{filters}
+  #{its}
+end
+TMPL
+  end
 end

@@ -3,12 +3,12 @@
 <section>
   <% @model.methods.each do |method| %>
     <dl>
-      <dt><%= method.description %></dt>
+      <dt><%=link_to method.description, action:"cases", id: 1 %></dt>
       <dd>
 	<ul>
           <% method.contexts.each do |context| %>
             <li>
-	      <%= context.description %>
+	      <%=link_to context.description, "" %>
 	      
 	    </li>
           <% end %>

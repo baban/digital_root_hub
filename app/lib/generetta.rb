@@ -1,28 +1,19 @@
+# encoding: utf-8
+
 class Generetta
   def self.dump
-    filename = "#{Rails.root.to_path}/spec/models/hoge.generetta.rb"
-    File.open(filename,"w") do |io|
-      GenerettaContext.find_each do |context|
-        io<< self.template(context)
+    GenerettaModel.find_each do |model|
+      filename = "#{Rails.root.to_path}/spec/models/#{model.title.tableize}_spec.generetta.rb"
+      File.open(filename,"w") do |io|
+        io<< "#encoding: utf-8\n"
+        io<< model.to_test(:rspec)
       end
     end
-  end
-
-  def self.template(context)
-    template=<<EOF
-context "#{context.description}" do
-  #{self.cases(context.cases)}
-end
-EOF
-  end
-
-  def self.cases(cases)
-    cases.map do |cas|
-      <<IT
-it "#{cas.description}" do
-        #{cas.content}
-end
-IT
-    end.join("\n")
+    #GenerettaController.find_each do |model|
+    #  filename = "#{Rails.root.to_path}/spec/models/#{model.title.tableize}_spec.generetta.rb"
+    #  File.open(filename,"w") do |io|
+    #    io<< model.to_test(:rspec)
+    #  end
+    #end
   end
 end

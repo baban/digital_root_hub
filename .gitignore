@@ -16,3 +16,4 @@ db/schema.rb
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+spec/*/*_spec.generetta.rb
