@@ -1,6 +1,6 @@
 <h2><%= @context.description %></h2>
 
-<%=form_for :cases, url:"" do |f| %>
+<%=form_for @context, url:{ controller:"generetta/cases" } do |f| %>
   <div class="filters">
   <% @context.context_filters.each do |filter| %>
     <div class="filter">
@@ -23,9 +23,11 @@
     <% end %>
   </table>
 
-  <%= form_for :new, url:{ action:"new" } do |f| %>
-    <%=f.submit "新規context(TODO)" %>
-  <% end %>
+  <%=f.submit "送信" %>
+<% end %>
+
+<%= form_for :new, url:{ action:"new" } do |f| %>
+  <%=f.submit "新規context(TODO)" %>
 <% end %>
 
 

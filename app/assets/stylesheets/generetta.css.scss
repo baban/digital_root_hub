@@ -1,21 +1,4 @@
-@mixin clearfix {
-  content:"";
-  width:100%;
-  display:block;
-  clear:both;
-}
-
-@mixin clearfix-before {
-  &:after {
-    @include clearfix;
-  }
-}
-
-@mixin clearfix-after {
-  &:after {
-    @include clearfix;
-  }
-}
+@import "mixins.scss";
 
 body {
   margin:0;
@@ -33,6 +16,7 @@ header {
     ul {
       li {
         display:item-list;
+        list-style-type:none;
         float:left;
       }
     }

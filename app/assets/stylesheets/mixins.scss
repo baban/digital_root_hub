@@ -1,0 +1,19 @@
+@mixin clearfix {
+  content:"";
+  width:100%;
+  display:block;
+  clear:both;
+}
+
+@mixin clearfix-before {
+  &:after {
+    @include clearfix;
+  }
+}
+
+@mixin clearfix-after {
+  &:after {
+    @include clearfix;
+  }
+}
+

@@ -7,6 +7,9 @@ LinkStation::Application.routes.draw do
 
   resources(:links,only:[:index])
   resources(:generetta) { collection { get :sidebar, :models, :methods, :cases } }
+  namespace(:generetta) do
+    resources(:cases,only:[:create,:update])
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

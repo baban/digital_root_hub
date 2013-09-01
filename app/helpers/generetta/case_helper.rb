@@ -1,0 +1,2 @@
+module Generetta::CaseHelper
+end
