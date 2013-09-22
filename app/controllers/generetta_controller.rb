@@ -2,7 +2,7 @@
 
 class GenerettaController < ApplicationController
   def index
-    @model = GenerettaModel.where( title: params[:id] ).first
+    @models = GenerettaModel.where( title: params[:id] ).first
   end
 
   def models

@@ -2,7 +2,7 @@
 
 class GenerettaModel < ActiveRecord::Base
   attr_accessible :description
-  has_many :generetta_methods
+  has_many :generetta_methods, :as => :parent
   alias :methods :generetta_methods
 
   def to_test(mode= :rspec)

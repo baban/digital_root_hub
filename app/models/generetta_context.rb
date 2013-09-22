@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class GenerettaContext < ActiveRecord::Base
+  belongs_to :parent, :polymorphic => :true
+
   attr_accessible :description
   has_many :generetta_cases
   has_many :generetta_context_filters
