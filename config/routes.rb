@@ -2,7 +2,7 @@ LinkStation::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#callback"
   match "/logout" => "sessions#destroy", :as => :logout
 
-  root to:"top#index"
+  root to:"links#index"
   devise_for :user
 
   resources(:links,only:[:index])

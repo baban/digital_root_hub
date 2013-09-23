@@ -21,6 +21,7 @@ staging:
 production:
   adapter: mysql2
   database: dirital_root_hub
-  username: cook24
+  username: root
+  password: root
   host: localhost
 
