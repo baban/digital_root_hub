@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      author: 作者
+      media: サイトカテゴリ
+      site: Webサイト
+      user: ユーザー
+
+    attributes:
+      author:
+        name: 作者名
+        name_kana: よみがな
+
+      media:
+        name: 名前
+        icon_url: アイコン
+
+      site:
+        title: タイトル
+        href: URL
+        author_id: 作者ID
+        media_id: サイト
+        publiced_at: 公開日時
+        closed_at: 閉鎖日時
+
+      user:
+      
