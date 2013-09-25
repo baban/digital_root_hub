@@ -3,6 +3,8 @@
 Site:
   fields:
     default: title, href, author_id, media_id, publiced_at, closed_at
-    form: title, href, author_id, media_id, publiced_at, closed_at
+    form: title, href, author_id, media_id
+    options:
+      selectors: media_id
   relationships: 
   application: Application
