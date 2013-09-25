@@ -20,7 +20,7 @@ staging:
 
 production:
   adapter: mysql2
-  database: dirital_root_hub
+  database: digital_root_hub
   username: root
   password: root
   host: localhost
