@@ -3,8 +3,9 @@
 Author:
   fields:
     default: name, name_kana
+    list: id, name, name_kana
     form: name, name_kana
-    order_by: -name
-    search: =name
+  order_by: -id
+  search: =name
   relationships: sites
   application: Application
