@@ -6,4 +6,8 @@ class Site < ActiveRecord::Base
   def self.media_ids
     Media.all.map{ |o| [o.name,o.id] }
   end
+  
+  def media
+    Media.find_by_id(self.media_id)
+  end
 end

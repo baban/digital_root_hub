@@ -12,7 +12,11 @@
           <dd>
             <ul>
               <% author.sites.each do |site| %>
-                <%=link_to site.title, site.href %>
+                <% if site.media.try(:icon_url).present? %>
+                  <%=link_to raw(%|<img src="#{site.media.icon_url}" alt="#{site.title}" />|), site.href %>
+                <% else %>
+                  <%=link_to site.title, site.href %>
+                <% end %>
               <% end %>
             </ul>
           </dd>
