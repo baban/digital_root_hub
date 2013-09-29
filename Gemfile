@@ -18,7 +18,7 @@ gem "mini_magick", "3.4"
 gem "carrierwave", "0.6.2"
 gem "yard" # document generator like javadoc
 gem "rails3_acts_as_paranoid", "0.2.4" # DB delete method changed logical delete
-gem 'flextures', "2.1.0" # add rake command for dump and load fixtures
+gem 'flextures', "3.0.2" # add rake command for dump and load fixtures
 gem "kaminari", "0.14.1" # paginate view
 gem "whenever", '0.7.2', require:false # cron settiing automation 
 

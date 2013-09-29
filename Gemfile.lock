@@ -45,7 +45,7 @@ GEM
     execjs (2.0.1)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    flextures (2.1.0)
+    flextures (3.0.2)
     formtastic (2.1.0)
       actionpack (~> 3.0)
     hashie (1.2.0)
@@ -161,7 +161,7 @@ DEPENDENCIES
   carrierwave (= 0.6.2)
   dalli (= 2.1.0)
   devise (= 2.1.0)
-  flextures (= 2.1.0)
+  flextures (= 3.0.2)
   formtastic (= 2.1.0)
   jquery-rails
   kaminari (= 0.14.1)
