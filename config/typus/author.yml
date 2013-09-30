@@ -6,6 +6,6 @@ Author:
     list: id, name, name_kana
     form: name, name_kana
   order_by: -id
-  search: =name
+  search: name, name_kana
   relationships: sites
   application: Application
