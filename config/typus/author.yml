@@ -2,10 +2,14 @@
 
 Author:
   fields:
-    default: name, name_kana
-    list: id, name, name_kana
-    form: name, name_kana
+    default: name, name_kana, publiced
+    list: id, name, name_kana, publiced
+    form: name, name_kana, publiced
+    options:
+      booleans:
+        publiced: ["活動中", "活動停止"]
   order_by: -id
   search: name, name_kana
+  filters: publiced
   relationships: sites
   application: Application

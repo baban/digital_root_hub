@@ -10,6 +10,7 @@ ja:
       author:
         name: 作者名
         name_kana: よみがな
+        publiced: 活動中
 
       media:
         name: 名前
@@ -22,6 +23,8 @@ ja:
         media_id: サイト
         publiced_at: 公開日時
         closed_at: 閉鎖日時
+        publiced: 公開
+        status: サイト状態
 
       user:
       
