@@ -2,3 +2,7 @@
 
 admin:
   Media: create, read, update, delete
+
+director:
+  Media: create, read, update, delete
+

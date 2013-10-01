@@ -2,3 +2,9 @@
 
 admin:
   AdminUser: all
+
+director:
+  AdminUser: all
+
+editor:
+  AdminUser: read

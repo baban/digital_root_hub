@@ -2,3 +2,9 @@
 
 admin:
   Site: create, read, update, delete
+
+director:
+  Site: create, read, update, delete
+
+editor:
+  Site: create, read, update, delete

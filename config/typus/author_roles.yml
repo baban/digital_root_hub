@@ -2,3 +2,9 @@
 
 admin:
   Author: create, read, update, delete
+
+director:
+  Author: create, read, update, delete
+
+editor:
+  Author: create, read, update, delete
