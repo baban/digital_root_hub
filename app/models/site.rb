@@ -2,9 +2,10 @@
 class Site < ActiveRecord::Base
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :admin
+  has_many :admin_operation_logs, as: :parent
   validates :media_id, presence: true
 
-  scope :visibles, ->{  }
+  scope :visibles, ->{ scoped }
 
   def self.media_ids
     Media.all.map{ |o| [o.name,o.id] }
