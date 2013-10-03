@@ -50,7 +50,7 @@ class Admin::ResourcesController < Admin::BaseController
 
     @item = @resource.new
     ####
-    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
     ####
     @item.assign_attributes(item_params, :as => current_role)
 
@@ -96,7 +96,7 @@ class Admin::ResourcesController < Admin::BaseController
 
     respond_to do |format|
       ####
-      @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+      @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
       ####
       if @item.update_attributes(attributes, :as => current_role)
         set_attributes_on_update
@@ -111,7 +111,7 @@ class Admin::ResourcesController < Admin::BaseController
 
   def destroy
     ####
-    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
     ####
     if @item.destroy
       notice = Typus::I18n.t("%{model} successfully removed.", :model => @resource.model_name.human)
