@@ -5,7 +5,10 @@ class Site < ActiveRecord::Base
   has_many :admin_operation_logs, as: :parent
   validates :media_id, presence: true
 
-  scope :visibles, ->{ scoped }
+  scope :visibles, ->( now = Time.now){ scoped.where( " publiced_at IS NULL OR publiced_at < ? ", now ).where( " closed_at IS NULL OR ? < closed_at ", now ) }
+  scope :categorize, ->( status_id ) do
+    where( status: status_id )
+  end
 
   def self.media_ids
     Media.all.map{ |o| [o.name,o.id] }

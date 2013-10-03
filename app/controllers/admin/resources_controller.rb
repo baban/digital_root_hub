@@ -49,6 +49,9 @@ class Admin::ResourcesController < Admin::BaseController
     item_params.merge!(params[@object_name])
 
     @item = @resource.new
+    ####
+    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+    ####
     @item.assign_attributes(item_params, :as => current_role)
 
     set_attributes_on_create
@@ -92,6 +95,9 @@ class Admin::ResourcesController < Admin::BaseController
     attributes = params[:_nullify] ? { params[:_nullify] => nil } : params[@object_name]
 
     respond_to do |format|
+      ####
+      @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+      ####
       if @item.update_attributes(attributes, :as => current_role)
         set_attributes_on_update
         format.html { redirect_on_success }
@@ -104,6 +110,9 @@ class Admin::ResourcesController < Admin::BaseController
   end
 
   def destroy
+    ####
+    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation:"create" )
+    ####
     if @item.destroy
       notice = Typus::I18n.t("%{model} successfully removed.", :model => @resource.model_name.human)
     else
