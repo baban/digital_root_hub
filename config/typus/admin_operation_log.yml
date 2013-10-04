@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+AdminOperationLog:
+  fields:
+    default: parent_id, admin_user_id, operation
+    form: parent_id, admin_user_id, operation
+  relationships: 
+  application: Application
