@@ -1,12 +1,19 @@
 ja:
   activerecord:
     models:
+      admin_operation_log: 管理者ユーザーデータ変更履歴
       author: 作者
       media: サイトカテゴリ
       site: Webサイト
       user: ユーザー
 
     attributes:
+      admin_operation_log:
+        parent_type: 操作対象コンテンツ
+        parent_id: 操作対象ID
+        admin_user_id: 操作ユーザーID
+        operation: 操作内容
+
       author:
         name: 作者名
         name_kana: よみがな

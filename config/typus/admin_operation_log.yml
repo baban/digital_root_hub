@@ -2,7 +2,8 @@
 
 AdminOperationLog:
   fields:
-    default: parent_id, admin_user_id, operation
-    form: parent_id, admin_user_id, operation
+    default: id, parent_type, parent_id, admin_user_id, operation
+    form: admin_user_id, operation
   relationships: 
   application: Application
+  order_by: -id
