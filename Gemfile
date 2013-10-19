@@ -20,7 +20,7 @@ gem "yard" # document generator like javadoc
 gem "rails3_acts_as_paranoid", "0.2.4" # DB delete method changed logical delete
 gem 'flextures', "3.0.1" # add rake command for dump and load fixtures
 gem "kaminari", "0.14.1" # paginate view
-gem "whenever", '0.7.2', require:false # cron settiing automation 
+gem "whenever", '0.7.2' # cron settiing automation 
 
 # Gems used only for assets and not required
 # in production environments by default.

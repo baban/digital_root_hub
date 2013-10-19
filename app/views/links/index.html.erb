@@ -2,9 +2,20 @@
   <h2>リンク集</h2>
   <div class="modes">
     <ul>
+      <li><%=link_to "すべて", mode: nil %></li>
       <li><%=link_to "A-Z", mode: 1 %></li>
       <li><%=link_to "あ-ん", mode: 2 %></li>
       <li><%=link_to "情報系・団体・その他", mode: 3 %></li>
+    </ul>
+    <ul>
+      <% Media.all.each do |media| %>
+        <li>
+          <% if media.icon_url.present? %>
+            <%=image_tag media.icon_url %> … 
+          <% end %>
+          <%= media.name %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="paginate"><%=paginate @list %></div>
@@ -19,7 +30,8 @@
             <ul>
               <% author.sites.each do |site| %>
                 <% if site.media.try(:icon_url).present? %>
-                  <%=link_to raw(%|<img src="#{site.media.icon_url}" alt="#{site.title}" />|), site.href %>
+                  <%=img_tag site.media.icon_url, alt: site.media.id %>
+                  <%=link_to raw(truncate(site.title,length: 10)), site.href %>
                 <% else %>
                   <%=link_to site.title, site.href %>
                 <% end %>
