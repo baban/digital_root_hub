@@ -3,6 +3,7 @@
 Media:
   fields:
     default: name, icon_url
+    list: id, name, icon_url
     form: name, icon_url
   relationships: 
   application: Application

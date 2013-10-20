@@ -7,3 +7,4 @@ AdminOperationLog:
   relationships: 
   application: Application
   order_by: -id
+  filters: parent_type, operation
