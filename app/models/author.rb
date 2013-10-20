@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class Author < ActiveRecord::Base
+  acts_as_paranoid
   attr_accessible :name, :name_kana, :publiced, :memo
   attr_accessible :name, :name_kana, :publiced, :memo, as: :admin
   has_many :sites
