@@ -2,6 +2,8 @@
 class Site < ActiveRecord::Base
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :admin
+  attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :director
+  attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :editor
   has_many :admin_operation_logs, as: :parent
   validates :media_id, presence: true
 
