@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class Site < ActiveRecord::Base
+  acts_as_paranoid
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :admin
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :director

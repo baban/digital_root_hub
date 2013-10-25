@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class Author < ActiveRecord::Base
+  acts_as_paranoid
   attr_accessible :name, :name_kana, :publiced, :memo
   attr_accessible :name, :name_kana, :publiced, :memo, as: :admin
   attr_accessible :name, :name_kana, :publiced, :memo, as: :director
@@ -18,7 +19,7 @@ class Author < ActiveRecord::Base
 
   def self.search( prms )
     rows = self.visibles.includes(:sites)
-    rows = case prms[:mode].to_i
+    rows = case prms[:author_mode].to_i
            when 1; rows.alphabets
            when 2; rows.kana
            when 3; rows.etc_category
@@ -29,5 +30,9 @@ class Author < ActiveRecord::Base
 
   def self.category_ids
     %W"静止画 動画 団体 情報系".map.with_index(1).to_a
+  end
+
+  def self.author_modes
+    ["すべて","A-Z","あ-ん","情報系・団体・その他"].map.with_index.to_a
   end
 end
