@@ -7,6 +7,7 @@ class Site < ActiveRecord::Base
   attr_accessible :author_id, :href, :title, :media_id, :publiced_at, :closed_at, :status, :memo, as: :editor
   has_many :admin_operation_logs, as: :parent
   validates :media_id, presence: true
+  validates :name,     presence: true
 
   scope :visibles, ->( now = Time.now){ scoped.where( " publiced_at IS NULL OR publiced_at < ? ", now ).where( " closed_at IS NULL OR ? < closed_at ", now ) }
   scope :categorize, ->( status_id ) do

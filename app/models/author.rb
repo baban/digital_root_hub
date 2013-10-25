@@ -9,6 +9,8 @@ class Author < ActiveRecord::Base
   has_many :sites
   has_many :admin_operation_logs, as: :parent
 
+  validates :name,     presence: true
+
   scope :visibles, -> { where( publiced: true ) }
   # 作者名(A-Z)で検索する
   scope :alphabets, ->{ where( " name REGEXP ? ", "[0-9a-zA-Z].*" ) }
