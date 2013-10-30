@@ -50,7 +50,7 @@ class Admin::ResourcesController < Admin::BaseController
 
     @item = @resource.new
     ####
-    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
+    add_operation_log
     ####
     @item.assign_attributes(item_params, :as => current_role)
 
@@ -96,7 +96,7 @@ class Admin::ResourcesController < Admin::BaseController
 
     respond_to do |format|
       ####
-      @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
+      add_operation_log
       ####
       if @item.update_attributes(attributes, :as => current_role)
         set_attributes_on_update
@@ -111,7 +111,7 @@ class Admin::ResourcesController < Admin::BaseController
 
   def destroy
     ####
-    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: 1, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
+    add_operation_log
     ####
     if @item.destroy
       notice = Typus::I18n.t("%{model} successfully removed.", :model => @resource.model_name.human)
@@ -126,6 +126,9 @@ class Admin::ResourcesController < Admin::BaseController
 
     respond_to do |format|
       if @item.save
+        ####
+        add_operation_log
+        ####
         format.html do
           notice = Typus::I18n.t("%{model} successfully updated.", :model => @resource.model_name.human)
           redirect_to :back, :notice => notice
@@ -138,8 +141,12 @@ class Admin::ResourcesController < Admin::BaseController
     end
   end
 
-  private
+  protected
+  def add_operation_log
+    @item.admin_operation_logs<< AdminOperationLog.new( admin_user_id: admin_user.id, operation: params[:action] ) if @item.respond_to?(:admin_operation_logs)
+  end
 
+  private
   def get_model
     @resource = resource
     @object_name = ActiveModel::Naming.singular(@resource)
