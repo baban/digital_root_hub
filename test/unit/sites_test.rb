@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class SitesTest < ActiveSupport::TestCase
-  test "the truth" do
-    assert true
+  fixtures :all
+  describe ".media_ids" do
+    before do
+    end
+    test ".media_ids" do
+      assert true
+    end
   end
 end

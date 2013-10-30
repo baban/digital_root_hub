@@ -10,12 +10,10 @@ class Site < ActiveRecord::Base
   validates :title,    presence: true
 
   scope :visibles, ->( now = Time.now){ scoped.where( " publiced_at IS NULL OR publiced_at < ? ", now ).where( " closed_at IS NULL OR ? < closed_at ", now ) }
-  scope :categorize, ->( status_id ) do
-    where( status: status_id )
-  end
+  scope :categorize, ->( status_id ) { where( status: status_id ) }
 
   def self.media_ids
-    Media.all.map{ |o| [o.name,o.id] }
+    Media.all.map { |o| [o.name,o.id] }
   end
 
   def self.statuses
