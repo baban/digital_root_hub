@@ -3,7 +3,7 @@ ja:
     models:
       admin_operation_log: 管理者ユーザーデータ変更履歴
       author: 作者
-      media: サイトカテゴリ
+      media: サイト種別
       site: Webサイト
       user: ユーザー
 
@@ -18,6 +18,7 @@ ja:
         name: 作者名
         name_kana: よみがな
         publiced: 活動中
+        sites: サイト一覧
 
       media:
         name: 名前
@@ -27,11 +28,12 @@ ja:
         title: タイトル
         href: URL
         author_id: 作者ID
-        media_id: サイト
+        media_id: サイト種別
         publiced_at: 公開日時
         closed_at: 閉鎖日時
-        publiced: 公開
-        status: サイト状態
+        publiced: この情報を公開する
+        status: サイトの状態
+        memo: 備考欄
 
       user:
       

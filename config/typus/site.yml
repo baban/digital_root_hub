@@ -3,8 +3,8 @@
 Site:
   fields:
     default: title, href, author_id, media_id, status, publiced_at, closed_at
-    form: title, href, author_id, media_id, status, publiced_at, closed_at
-    list: id, title, href, author_id, media_id, status, publiced_at, closed_at
+    form: author_id, title, href, media_id, status, publiced_at, closed_at, memo
+    list: author_id, id, title, href, media_id, status, publiced_at, closed_at
     options:
       selectors: media_id, status
   relationships: 

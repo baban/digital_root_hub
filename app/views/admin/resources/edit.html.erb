@@ -1,5 +1,5 @@
 <%
-  page_title = Typus::I18n.t("Edit %{resource}", :resource => @resource.model_name.human)
+  page_title = Typus::I18n.t("編集: %{resource}", :resource => @resource.model_name.human)
   title(page_title)
 %>
 
@@ -8,6 +8,8 @@
     <%= page_title %>
     <small><%= list_actions %></small>
   </h2>
+
+  <%=render partial:"edit" %>
 
   <% if headless_mode? && params[:action] == 'edit' && flash.keys.include?(:notice) && !params[:_input] %>
     <script type="text/javascript">
