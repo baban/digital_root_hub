@@ -1,27 +1,17 @@
-development:
+login: &login
   adapter: mysql2
-  database: dirital_root_hub_dev
+  host: mysql
   username: root
   password: root
-  host: localhost
+
+development:
+  database: digital_root_hub_dev
+  <<: *login
 
 test:
-  adapter: mysql2
-  database: dirital_root_hub_test
-  username: root
-  password: root
-  host: localhost
-
-staging:
-  adapter: mysql2
-  database: dirital_root_hub_staging
-  username: root
-  host: localhost
+  database: digital_root_hub_test
+  <<: *login
 
 production:
-  adapter: mysql2
-  database: dirital_root_hub
-  username: root
-  password: root
-  host: localhost
-
+  database: digital_root_hub
+  <<: *login
