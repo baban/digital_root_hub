@@ -30,7 +30,7 @@
             <ul>
               <% author.sites.each.with_index do |site, i| %>
                 <% if site.media.try(:icon_url).present? %>
-                  <%=link_to raw("#{image_tag(site.media.icon_url,alt: site.media.name)} #{truncate(site.title, length: 10)}"), site.href %>
+                  <%=link_to raw("#{image_tag(site.media.icon_url, alt: site.media.name)} #{truncate(site.title, length: 10)}"), site.href %>
                 <% else %>
                   <%=link_to site.title, site.href %>
                 <% end %>
