@@ -1,12 +1,5 @@
 @charset "Shift_JIS";
 
-/*
-ƒuƒ‰ƒEƒUŠÔ‚Ì•\¦·‚ğ–„‚ß‚é‚½‚ß‚ÌAƒfƒtƒHƒ‹ƒgƒXƒ^ƒCƒ‹ƒV[ƒgB‚¿‚å‚Á‚Æİ’è‚µ‚·‚¬c
-xhtml1.0, 1.1‚ ‚½‚è‚ÅDeprecated‚Ìƒ^ƒO“ü‚ê‚È‚¢•ûŒü‚Åì¬
-“K—p”ÍˆÍ:ƒTƒCƒg‘S‘Ì
-CSS1ŒÀ’èİ’è
-*/
-
 /* ============================
 root elements
 ============================ */
@@ -60,7 +53,6 @@ cite {
 	margin:0 0.3em;
 }
 
-/* ‹­’²‚Ì‹­‚³‚Í em ,strong, strong.stronger, strong.very-strong ‚Ì‡‚É‹­‚­‚È‚é */
 em {
 	font-style:normal;
 	font-weight:bold;
@@ -117,7 +109,7 @@ code {
 block elements
 =================================== */
 
-/* h1`h6 */
+/* h1ï¿½`h6 */
 h1, h2, h3, h4, h5, h6 {
 	margin:0.5em 0;
 }
@@ -238,17 +230,10 @@ a img {
 	border:solid thin #00f;
 }
 
-/* ”Ä—pƒeƒLƒXƒg—v‘f */
-
 br {
 	letter-spacing:0;
 }
 
-/*
-—p“r‚ª“Áê‚Å‚·
-‰æ‘œ“™‚Éfloat‚ğ“K—p‚µ‚½ê‡Ae—v‘f‚Ìƒ{ƒbƒNƒX‚©‚ç‰æ‘œ‚ª‚Í‚İo‚È‚¢‚½‚ß‚Ég—p‚·‚ébrƒ^ƒO‚ÉƒRƒŒ‚ğ—˜—p‚µ‚Ü‚·
-(Œ»İ)div:after{ content:" "; display:block; }‚É’u‚«Š·‚¦’†
-*/
 br.clear {
 	clear:both;
 }

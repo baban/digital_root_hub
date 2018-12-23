@@ -1,11 +1,5 @@
 @charset "Shift_JIS";
 
-/*
-ブラウザ間の表示差を埋めるための、デフォルトスタイルシート。ちょっと設定しすぎ…
-xhtml1.0, 1.1あたりでDeprecatedのタグ入れない方向で作成
-適用範囲:サイト全体
-CSS1限定設定
-*/
 
 /* ============================
 root elements
@@ -55,7 +49,6 @@ cite {
 	margin:0 0.3em;
 }
 
-/* 強調の強さは em ,strong, strong.stronger, strong.very-strong の順に強くなる */
 em {
 	font-style:normal;
 	font-weight:bold;
@@ -101,7 +94,6 @@ code {
 block elements
 =================================== */
 
-/* h1～h6 */
 h {
 	margin:0.5em 0;
 	font-weight:bold;
@@ -210,17 +202,10 @@ dd {
 	padding:0.3em;
 }
 
-/* 汎用テキスト要素 */
-
 br {
 	letter-spacing:0;
 	clear:both;
 }
-
-/*
-用途が特殊です
-画像等にfloatを適用した場合、親要素のボックスから画像がはみ出ないために使用するbrタグにコレを利用します
-*/
 
 textarea, form, input {
 	border-style:solid;

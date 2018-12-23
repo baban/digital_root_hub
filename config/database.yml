@@ -3,6 +3,7 @@ login: &login
   host: mysql
   username: root
   password: root
+  pool: 2
 
 development:
   database: digital_root_hub_dev

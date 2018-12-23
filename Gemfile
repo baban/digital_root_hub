@@ -25,7 +25,7 @@ gem "whenever", '0.7.2' # cron settiing automation
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-
+  gem "sass"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 

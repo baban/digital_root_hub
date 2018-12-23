@@ -1,10 +1,5 @@
 @charset "Shift_JIS";
 
-/*
-	各地に分散しがちな、基本配色設定を書き出しておきます
-	適応範囲:サイト全体
-*/
-
 body {
 	color:#000;
 	background-color:#ffffff;
