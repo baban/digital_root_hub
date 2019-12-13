@@ -14,7 +14,7 @@ gem "omniauth", "1.1.0"
 gem "omniauth-twitter", "0.0.9" # twitter login
 gem "omniauth-facebook", "1.4.0" # facebook login
 gem "omniauth-google-oauth2", "0.1.10" # google+ login
-gem "mini_magick", "3.4"
+gem "mini_magick", "4.9.4"
 gem "carrierwave", "0.6.2"
 gem "yard" # document generator like javadoc
 gem "rails3_acts_as_paranoid", "0.2.4" # DB delete method changed logical delete
