@@ -10,7 +10,7 @@ gem "dalli", "2.1.0"           # memcached hig-perfirmance settinged gem
 gem "devise", "2.1.0" # add login, logout 
 gem "typus", "3.1.10" # generte administration functions
 gem "formtastic", "2.1.0" # form helper(use in typus)
-gem "omniauth", "1.1.0"
+gem "omniauth", "1.4.2"
 gem "omniauth-twitter", "0.0.9" # twitter login
 gem "omniauth-facebook", "1.4.0" # facebook login
 gem "omniauth-google-oauth2", "0.1.10" # google+ login
