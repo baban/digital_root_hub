@@ -6,7 +6,7 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "mysql2", "0.3.21"
-gem "dalli", "2.1.0"           # memcached hig-perfirmance settinged gem
+gem "dalli", "3.2.3"           # memcached hig-perfirmance settinged gem
 gem "devise", "2.1.0" # add login, logout 
 gem "typus", "3.1.10" # generte administration functions
 gem "formtastic", "2.1.0" # form helper(use in typus)
